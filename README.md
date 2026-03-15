@@ -1,49 +1,41 @@
-# AI Chain
+<div align="center">
 
-[![CI](https://github.com/blackboxprogramming/ai-chain/actions/workflows/ci.yml/badge.svg)](https://github.com/blackboxprogramming/ai-chain/actions/workflows/ci.yml)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB.svg)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg)](https://fastapi.tiangolo.com)
-[![Ollama](https://img.shields.io/badge/Ollama-distributed-FF6B2B.svg)](https://ollama.ai)
-[![Edge AI](https://img.shields.io/badge/edge-52_TOPS-00D4FF.svg)](https://blackroad.io)
+<img src="https://images.blackroad.io/pixel-art/road-logo.png" alt="BlackRoad OS" width="80" />
 
+# ai-chain
 
+**AI Chain — Distributed multi-node LLM inference with automatic failover. Chain Ollama models across Raspberry Pi fleet for load-balanced AI at the edge. FastAPI + Python.**
 
-Chained AI inference across distributed edge nodes. Routes prompts through a priority-ordered mesh of Ollama instances on Raspberry Pi 5 hardware.
+[![BlackRoad OS](https://img.shields.io/badge/BlackRoad_OS-Pave_Tomorrow-FF2255?style=for-the-badge&labelColor=000000)](https://blackroad.io)
+[![License](https://img.shields.io/badge/License-Proprietary-FF6B2B?style=for-the-badge&labelColor=000000)](./LICENSE)
+[![Edge AI](https://img.shields.io/badge/Edge_AI-52_TOPS-00D4FF?style=for-the-badge&labelColor=000000)](https://github.com/BlackRoad-OS-Inc)
 
-## Architecture
+</div>
 
-```
-Client → /chain → Probe all nodes → Route to fastest alive node
-                                   ↓ (mode=full)
-                              Refine via second node
-```
+<div align="center">
+<sub>Part of the <a href="https://blackroad.io">BlackRoad OS</a> ecosystem — sovereign edge AI infrastructure</sub>
+</div>
 
-**Nodes:** Octavia (deepseek-r1), Aria (qwen2.5-coder), Lucidia (tinyllama), Alice (tinyllama fallback)
+---
 
-## API
+## Overview
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/health` | GET | Node health check with model inventory |
-| `/chain` | POST | Run chained inference (`{"prompt": "...", "mode": "fast\|full"}`) |
+AI Chain — Distributed multi-node LLM inference with automatic failover. Chain Ollama models across Raspberry Pi fleet for load-balanced AI at the edge. FastAPI + Python.
 
-## Run
+## License
 
-```bash
-pip install -r requirements.txt
-python server.py  # http://localhost:8100
-```
+**Proprietary** — Copyright © 2024–2026 [BlackRoad OS, Inc.](https://blackroad.io) All rights reserved.
 
-## Test
+Founder & CEO: **Alexa Louise Amundson** · Delaware C-Corp
 
-```bash
-pip install pytest httpx
-pytest tests/
-```
+See [LICENSE](./LICENSE) for full terms.
 
-## Deploy
+---
 
-```bash
-docker build -t ai-chain .
-docker run -p 8100:8100 ai-chain
-```
+<div align="center">
+
+**BlackRoad OS — Pave Tomorrow.**
+
+[blackroad.io](https://blackroad.io) · [GitHub](https://github.com/BlackRoad-OS-Inc) · [Brand](https://brand.blackroad.io)
+
+</div>
